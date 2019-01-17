@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<style type="text/css">
+	    .button1{
+	    	color: white;
+	    	background-color: darkgrey;
+	    }
+		#header1{
+              height: 50px;
+              font-size: 20px;
+              margin: 25px 0px;
+		}
+		button{
+			border: solid 1px black;
+			box-shadow: 0px 0px 5px black;
+			margin:10px 0px 5px 5px; 
+			width: 80px;
+			height: 40px;
+			font-size: 20px;
+			font-weight: bolder;
+		}
+		#calculator{
+			background-color: lightgrey;
+			padding:25px 10px;
+			border: solid 1px black;
+			box-shadow: 0px 0px 20px black;
+		}
+		input{
+			font-size: 30px;
+			font-weight: bolder;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).on("click",".button1",function(){
+			x = $(this).html();
+			y = $("input").val();
+			$("input").val(y+x)
+			y = $("input").val();
+			});
+            function calculate(){
+            	result = eval(y);
+                $("input").val(result);
+            }
+            function clear1(){
+            	$("input").val("");
+            }
+	</script>
+</head>
+<body class="container ">
+	<div id="header1" class="col-lg-12 bg-info">
+		this is the UI for calculator!
+	</div>
+  <div id="calculator" class="col-lg-4 col-lg-offset-4">
+  	<table cellpadding="3" cellspacing="7" class="col-lg-12">
+  		<tr><input id="display1" class="col-lg-12"></tr>
+  		<tr>
+  			<td><button class="button1">7</button></td>
+  			<td><button class="button1">8</button></td>
+  			<td><button class="button1">9</button></td>
+  			<td><button class="button1">+</button></td>
+  		</tr>
+  		<tr>
+  			<td><button class="button1">4</button></td>
+  			<td><button class="button1">5</button></td>
+  			<td><button class="button1">6</button></td>
+  			<td><button class="button1">-</button></td>
+  		</tr>
+  		<tr>
+  			<td><button class="button1">1</button></td>
+  			<td><button class="button1">2</button></td>
+  			<td><button class="button1">3</button></td>
+  			<td><button class="button1">*</button></td>
+  		</tr>
+  		<tr>
+  			<td> <button  onclick="clear1()" class="btn-info">C</button></td>
+  			<td><button class="button1">0</button></td>
+  			<td><button onclick="calculate()" class="btn-success" >=</button></td>
+  			<td><button class="button1">&#247;</button></td>
+  		</tr>	 		
+  	</table>
+  </div>
+</body>
+</html>
